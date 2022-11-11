@@ -4,67 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-
     <div class="wrapper">
-        <header>
-            <h1>Welcome ARRON!!</h1>
-        </header>
 
-        <div id="months" class="info">
-            <h2>Do you know the 12 months of the year</h2>
+        <nav>
+            <h1>Cameron's site</h1>
+            <section id="nav-options">
+                <a href="">Projects</a>
+                <a href="">Education</a>
+                <a href="">About me</a>
+            </section>
+        </nav>
 
-            <input type="button" value="get" id="months">
+        <main>
+            <h1 class="giant" id="projects">Projects</h1>
+            <div class="project-wrapper">
+                <div id="sketch-holder" class="project"></div>
 
-            <div id="monthsInfo"></div>
+                <div class="project">
+                    <p>project 2 </p>
+                </div>
 
-        </div>
+                <div class="project">
+                    <p>project 3</p>
+                </div>
 
-        <div id="ninja-turtles" class="info">
-            <h2>Do you know the ninja turtles and their master's name.</h2>
-            <input type="button" value="get" id="months">
-            
-            <div id="turtles-info"></div>
+                <div class="project">
+                    <p>project 4</p>
+                </div>
 
-        </div>
+            </div>
+            <h1 class="giant" id="education">Education</h1>
 
-        <div id="times-tables" class="info">
-            <h2>do you know your times tables?</h2>
-            <input type="number" id="number-input" value="10">
-            <input type="button" value="get" id="get-times-tables">
+            <div id="main-content">
+                <div class="education">
+                    <p>I attend The British Columbia Institute of Technology.</p>
+                    <p>I am doing the Computing Systems Technology diploma.</p>    
+                </div>
+                <div class="education">
+                    <p>One of the biggest challenges of the program is the laoded schedule.</p>
+                    <button>See schedule</button>
+                </div>
+            </div>
 
-            <div id="times-tables-info"></div>
+            <h1 class="giant" id="about">About me</h1>
+            <div class="about-me">
+                <p>I have a love for building cool things.</p>
+                <p>When I build something I want to be proud of what I built.</p>
+                <p>I want everything I build to be dope as fuck.</p>
+            </div>
+        </main>
 
-        </div>
 
-        <div id="schedule" class="info">
-            <h2>this is my schedule</h2>
-            <input type="button" value="get" id="get-schedule">
-
-            <div id="schedule-info"></div>
-
-        </div>
-
-        <div id="names" class="info">
-            <h2>Here are some names.</h2>
-            <input type="button" value="get json" id="get-names-json">
-            <input type="button" value="get html" id="get-names-html">
-
-            <div id="names-info"></div>
-        </div>
-
-        <div id="curr-temp" class="info">
-            <h2>get the current tempurature of vancouver</h2>
-            <input type="button" id="get-curr-temp" value="get">
-
-            <div id="curr-temp-info"></div>
-        </div>
-
-        <input type="button" id="clear" value="clear">
     </div>
-    <script src="/js/client.js"></script>
+    <script src="scripts/libraries/p5.min.js"></script>
+    <script src="scripts/libraries/p5.sound.min.js"></script>
+    <script src="scripts/sketch.js"></script>
+    <script src="scripts/Cell.js"></script>
+    <script src="scripts/maze.js"></script>
+    <!-- <script src="/js/client.js"></script> -->
 </body>
 </html>
