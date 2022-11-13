@@ -64,29 +64,31 @@ app.get("/get_times_tables", (req, res) => {
 
 app.get("/get_curr_temp", (req, res) => {
     axios({
-        method: 'get',
-        
-        
+        method: 'get',  
         url: `https://api.openweathermap.org/data/3.0/onecall?lat=49&lon=-123&exclude=minutely,daily,alerts&appid=${weatherApiKey}&units=metric`
     })
 .then(response => {
-    console.log(response.data)
+    let hourly = response.data.hourly; 
     let hourly_temp = []
-    let hourly = response.data.hourly;
-    count = 0;
-    for (ele of response.data.hourly){
-        hourly_temp.push({
-            x: hourly.dt,
-            y: response.data.hourly.temp
-        })
-        if (count > 12){
-            break;
-        }
-        count++;
-    }
-    res.send(hourly_temp);
+    for (let i = 0; i < 12; i++){
+      ele = hourly[i];
+      var myDate = new Date(ele.dt * 1000);
+      var pstDate = myDate.toLocaleString("en-US", {
+          timeZone: "America/Los_Angeles"
+      })
+      .slice(-11, -9);
+      // let hour = pstDate.slice(-11, -9);
+      // let len = pstDate.length;
+      // let timeOfDay = pstDate.slice(len-2, len);
+      hourly_temp.push({
+          x: parseInt(pstDate),
+          y: ele.temp
+      })
+      }
+      res.send(hourly_temp)
 })
 })
+
 
 let port = 8000;
 app.listen(port, function () {

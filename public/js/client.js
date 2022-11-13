@@ -69,8 +69,25 @@ ready(function () {
 
     document.querySelector("#get-curr-temp").addEventListener("click", function (e){
         ajaxGET("/get_curr_temp", function (data) {
-            let temp = document.querySelector("#")
-            console.log(data);
+            let hourly_temp = JSON.parse(data);
+            new Chart("myChart", {
+                type: "scatter",
+                data: {
+                  datasets: [{
+                    pointRadius: 4,
+                    pointBackgroundColor: "rgb(255,255,255)",
+                    data: hourly_temp
+                  }]
+                },
+                options: {
+                  legend: {display: false},
+                  scales: {
+                    xAxes: [{ticks: {min: 0, max:12}}],
+                    yAxes: [{ticks: {min: 0, max:8}}],
+                  }
+                }
+              });
+            
         });
     });
 
