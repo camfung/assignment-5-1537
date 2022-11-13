@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,31 +22,43 @@
         <main>
             <h1 class="giant" id="projects">Projects</h1>
             <div class="project-wrapper">
-                <div id="sketch-holder" class="project"></div>
-
-                <div class="project">
-                    <p>project 2 </p>
+                <div id="sketch-holder" class="project" id="project-1"></div>
+                <div id="project1" class="project-description">
+                    <h1>Maze Generation</h1>
+                    <p>This project uses the randomized depth first search algorithm to generate the maze.</p>
+                    <p>The project repo on github can be found <a href="https://github.com/camfung/camfung.github.io" target="_blank">here</a></p>
+                    <p>It is being hosted by github you can find the full site <a href="https://camfung.github.io/" target="_blank">here</a></p>
                 </div>
 
-                <div class="project">
-                    <p>project 3</p>
+                <div class="project" id="project-2">
+
+                </div>
+                <div id="project2" class="project-description">
+                    <h1>Rubiks cube solver</h1>
                 </div>
 
-                <div class="project">
-                    <p>project 4</p>
+                <div class="project" id="project-3">
+                    <p>Do you want to know the hourly forcast for Vancouver, Canada</p>
+                    <button id="get-curr-temp">Click Here</button>
+                    <div id="temperature-landing"></div>
+                </div>
+                <div id="project3" class="project-description">
+                    <h1>Current temperature getter</h1>
                 </div>
 
             </div>
             <h1 class="giant" id="education">Education</h1>
 
-            <div id="main-content">
+            <div id="education-content">
                 <div class="education">
                     <p>I attend The British Columbia Institute of Technology.</p>
                     <p>I am doing the Computing Systems Technology diploma.</p>    
                 </div>
                 <div class="education">
                     <p>One of the biggest challenges of the program is the laoded schedule.</p>
-                    <button>See schedule</button>
+                    <button id="get-schedule">See schedule</button>
+
+                    <div id="schedule-info"></div>
                 </div>
             </div>
 
@@ -60,11 +72,11 @@
 
 
     </div>
-    <script src="scripts/libraries/p5.min.js"></script>
-    <script src="scripts/libraries/p5.sound.min.js"></script>
-    <script src="scripts/sketch.js"></script>
-    <script src="scripts/Cell.js"></script>
-    <script src="scripts/maze.js"></script>
-    <!-- <script src="/js/client.js"></script> -->
+    <script src="./scripts/libraries/p5.min.js"></script>
+    <script src="./scripts/libraries/p5.sound.min.js"></script>
+    <script src="./scripts/sketch.js"></script>
+    <script src="./scripts/Cell.js"></script>
+    <script src="./scripts/maze.js"></script>
+    <script src="/js/client.js"></script>
 </body>
 </html>

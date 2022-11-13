@@ -1,9 +1,15 @@
+const { resolveSoa } = require("dns");
 const { response } = require("express");
 const express = require("express");
+const axios = require("axios");
+
 const app = express();
 app.use(express.json());
 const fs = require("fs");
 
+const weatherApiKey = ""
+
+app.use("/scripts", express.static("./public/scripts"))
 app.use("/js", express.static("./public/js"));
 app.use("/css", express.static("./public/css"));
 app.use("/img", express.static("./public/img"));
@@ -57,7 +63,29 @@ app.get("/get_times_tables", (req, res) => {
 });
 
 app.get("/get_curr_temp", (req, res) => {
-    res.send("this")
+    axios({
+        method: 'get',
+        
+        
+        url: `https://api.openweathermap.org/data/3.0/onecall?lat=49&lon=-123&exclude=minutely,daily,alerts&appid=${weatherApiKey}&units=metric`
+    })
+.then(response => {
+    console.log(response.data)
+    let hourly_temp = []
+    let hourly = response.data.hourly;
+    count = 0;
+    for (ele of response.data.hourly){
+        hourly_temp.push({
+            x: hourly.dt,
+            y: response.data.hourly.temp
+        })
+        if (count > 12){
+            break;
+        }
+        count++;
+    }
+    res.send(hourly_temp);
+})
 })
 
 let port = 8000;

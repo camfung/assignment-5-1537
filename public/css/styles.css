@@ -1,0 +1,104 @@
+div {
+    /* border: 1px solid white; */
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body {
+    background-color: black;
+}
+
+.wrapper {
+    background-color: black;
+    color: antiquewhite;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 5% 0 5%;
+}
+
+nav > section {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+#education {
+    font-size: 18em;
+}
+
+
+.giant {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+#projects {
+    font-size: 22em;
+}
+
+.project {
+    grid-row: 1 / span 1;
+
+    /* padding-top: 25%; */   
+}
+
+.project-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+#main-content {
+    display: flex;
+}
+
+.education-content {
+    width: 100%;
+    padding-top: 100%;
+    margin: 0 auto;
+}
+
+#about {
+    font-size: 18em;
+}
+
+
+#info {
+    /* padding: 10%; */
+}
+
+.methods{
+    background-color: blue;
+}
+
+.fundamentals{
+    background-color: grey;
+}
+
+.web-dev {
+    background-color: orange;
+}
+
+.comms {
+    background-color: salmon;
+}
+
+.project-1800{
+    background-color: red;
+}
+
+.biz {
+    background-color: rgb(177, 177, 31);
+}
+
+.math{
+    background-color: green;
+}
