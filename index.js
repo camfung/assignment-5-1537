@@ -7,7 +7,8 @@ const app = express();
 app.use(express.json());
 const fs = require("fs");
 
-const weatherApiKey = ""
+var weatherApiKey = "cb32d44dd08a3147e7323747b37c911a"
+
 
 app.use("/scripts", express.static("./public/scripts"))
 app.use("/js", express.static("./public/js"));
