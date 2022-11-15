@@ -42,22 +42,33 @@ ready(function () {
     //     document.getElementById("names-info").innerHTML = "";
     // });
 
-
     document.querySelector("#get-schedule").addEventListener("click", function (e){
 
         let button = document.querySelector("#get-schedule"); 
         if (button.textContent === "See schedule"){
             ajaxGET("/get_schedule?format=html", function (data) {
                 document.querySelector("#schedule-info").innerHTML = data;
+                $("#schedule-info").slideUp(0);
+                $("#schedule-info").slideDown(1000);
+
             });
             button.textContent = "Clear schedule"
         } 
         else if (button.textContent === "Clear schedule"){
-            document.querySelector("#schedule-info").innerHTML = "";
+            $("#schedule-info").slideUp(1000);
             button.textContent = "See schedule"
         }
     });
 
+
+    $(document).ready(function(){
+        $("#slide-up").click(function(){
+          $("#schedule-info").slideUp(1000);
+        });
+        $("#slide-down").click(function(){
+          $("#schedule-info").slideDown(1000);
+        });
+      });
     // document.querySelector("#get-times-tables").addEventListener("click", function (e){
     //     let n = document.getElementById("number-input").value;
     //     ajaxGET("/get_times_tables?n="+n, function (data) {
