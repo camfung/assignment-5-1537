@@ -77,13 +77,15 @@ ready(function () {
                     pointRadius: 4,
                     pointBackgroundColor: "rgb(255,255,255)",
                     data: hourly_temp
-                  }]
+                    
+                  }], 
                 },
+                showLine: true,
                 options: {
                   legend: {display: false},
                   scales: {
                     xAxes: [{ticks: {min: 0, max:12}}],
-                    yAxes: [{ticks: {min: 0, max:8}}],
+                    yAxes: [{ticks: {min: 0, max:20}}],
                   }
                 }
               });
@@ -101,6 +103,5 @@ function ready(callback) {
         console.log("ready state is 'complete'");
     } else {
         document.addEventListener("DOMContentLoaded", callback);
-        console.log("Listener was invoked");
     }
 }

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 div {
     /* border: 1px solid white; */
 }
@@ -13,14 +17,16 @@ body {
 
 .wrapper {
     background-color: black;
-    color: antiquewhite;
-    margin: 0 auto;
+    color: rgb(255,253,208);
+    margin: 0 5%;
 }
 
 nav {
     display: flex;
     justify-content: space-around;
     padding: 2% 5% 0 5%;
+    border-bottom: rgb(255,253,208) solid 1px;
+    margin: 0 2%;
 }
 
 nav > section {
@@ -31,7 +37,7 @@ nav > section {
 }
 
 #education {
-    font-size: 18em;
+    font-size: 15em;
 }
 
 
@@ -42,7 +48,7 @@ nav > section {
 }
 
 #projects {
-    font-size: 22em;
+    font-size: 17em;
 }
 
 .project {
@@ -68,7 +74,7 @@ nav > section {
 }
 
 #about {
-    font-size: 18em;
+    font-size: 15em;
 }
 
 
@@ -102,4 +108,47 @@ nav > section {
 
 .math{
     background-color: green;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#fractal-header {
+    text-align: center;
+    font-size: 4em;
+    padding: 5%;
+}
+
+#fractals {
+    margin-top: -2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5%;
+}
+#fractals img {
+    width: 80%;
+    border: white solid .5em;
+    border-radius: 1em;
+    height: 400px;
+}
+
+#fractal-des {
+    padding-top: 5%;
+}
+
+.card-holder {
+    perspective: 600px;
+}
+
+.card {
+    background-color: transparent;
+    transform: rotateY(50deg);
+    transition: all 1s ease;
+}
+
+
+.card:hover {
+    transform: rotateY(0deg);
 }
